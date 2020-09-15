@@ -1,0 +1,64 @@
+﻿@model IEnumerable<EmployeeDetails.Models.EmployeeModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div class="form-horizontal">
+
+    <hr />
+    <div class="form-group">
+
+
+        <table class="table table-responsive" style="width:800px">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.employee_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.employee_salary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.employee_age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.statusAge)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.statusSalary)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.employee_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employee_salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.employee_age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.statusAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.statusSalary)
+            </td>
+        </tr>
+
+            }
+
+        </table>
+        <div class="row">
+            <label style="font:bold">Average Age:</label>  @ViewBag.AverageOfAge
+        </div>
+        <div class="row">
+            <label style="font:bold">Average Salary:</label>  @ViewBag.AverageOfSalary
+        </div>
+    </div>
+</div>
+
